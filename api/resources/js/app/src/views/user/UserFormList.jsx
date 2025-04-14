@@ -22,9 +22,9 @@ const UserFormList = () => {
     }, []);
 
     return (
-        <div>
-            <div className="Display">
-                <div className="card animated fadeInDown">
+        <div  className="tudo">
+            <div className="Tamanho">
+                <div className="card-animated-fadeInDown">
                     <div
                         style={{
                             display: "flex",
@@ -38,7 +38,7 @@ const UserFormList = () => {
                         </Link>
                     </div>
 
-                    <table>
+                    <table className="table1">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -54,7 +54,7 @@ const UserFormList = () => {
                                         <td>{user.id}</td>
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
-                                        <td className="Center actions">
+                                        <td className="Center-actions">
                                             <Link
                                                 className="btn-show"
                                                 to={`/usuarios/${user.id}`}
