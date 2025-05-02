@@ -22,7 +22,7 @@ const UserFormList = () => {
     }, []);
 
     return (
-        <div  className="tudo">
+        <div className="tudo">
             <div className="Tamanho">
                 <div className="card-animated-fadeInDown">
                     <div
@@ -34,7 +34,7 @@ const UserFormList = () => {
                     >
                         <h1>Usuários</h1>
                         <Link to="/usuarios/novo" className="btn-add">
-                            Cadastrar
+                            Store
                         </Link>
                     </div>
 
@@ -59,19 +59,20 @@ const UserFormList = () => {
                                                 className="btn-show"
                                                 to={`/usuarios/${user.id}`}
                                             >
-                                                Ver
+                                                Show
                                             </Link>
+
                                             <Link
                                                 className="btn-edit"
                                                 to={`/usuarios/${user.id}/editar`}
                                             >
-                                                Editar
+                                                Update
                                             </Link>
                                             <Link
                                                 className="btn-delete"
                                                 to={`/usuarios/${user.id}/excluir`}
                                             >
-                                                Excluir
+                                                Destroy
                                             </Link>
                                         </td>
                                     </tr>

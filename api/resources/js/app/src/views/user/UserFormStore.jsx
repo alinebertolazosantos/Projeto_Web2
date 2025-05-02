@@ -1,6 +1,6 @@
 // 📄 UserFormStore.jsx - Cadastro de usuário
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axiosClient from "../../axiosClient";
 
 export const UserFormStore = () => {
@@ -51,6 +51,9 @@ export const UserFormStore = () => {
                 required
             />
             <button type="submit">Salvar</button>
+            <Link to="/usuarios" className="btn" style={{ marginLeft: "10px" }}>
+                Voltar
+            </Link>
         </form>
     );
 };

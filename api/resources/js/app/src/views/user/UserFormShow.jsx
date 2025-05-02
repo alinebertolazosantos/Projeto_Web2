@@ -1,11 +1,13 @@
 // 📄 UserFormShow.jsx - Visualização de usuário
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosClient from "../../axiosClient";
 
 export const UserFormShow = () => {
     const { id } = useParams();
     const [user, setUser] = useState(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         axiosClient
@@ -21,18 +23,30 @@ export const UserFormShow = () => {
 
     if (!user) return <p>Carregando...</p>;
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        navigate("/usuarios");
+    };
+
     return (
-        <div>
-            <h2>Visualizar Usuário</h2>
-            <p>
-                <strong>ID:</strong> {user.id}
-            </p>
-            <p>
-                <strong>Nome:</strong> {user.name}
-            </p>
-            <p>
-                <strong>Email:</strong> {user.email}
-            </p>
+        <div className="Display">
+            <h1>Visualizar Usuário</h1>
+            <hr></hr>
+            <form>
+                <p>
+                    <strong>ID:</strong> {user.id}
+                </p>
+                <p>
+                    <strong>Nome:</strong> {user.name}
+                </p>
+                <p>
+                    <strong>Email:</strong> {user.email}
+                </p>
+
+                <button className="btn" onClick={(e) => onSubmit(e)}>
+                    Voltar
+                </button>
+            </form>
         </div>
     );
 };

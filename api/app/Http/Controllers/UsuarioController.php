@@ -118,7 +118,7 @@ class UsuarioController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|string|max:255',
             'email' => 'sometimes|string|email|max:255|unique:users,email,' . $id,
-            'password' => 'sometimes|string|min:6',
+            
         ]);
 
         if ($validator->fails()) {

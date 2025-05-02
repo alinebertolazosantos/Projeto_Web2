@@ -44,7 +44,7 @@ export const UserFormUpdate = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="Display">
             <h2>Editar Usuário</h2>
             <input
                 name="name"
@@ -67,6 +67,7 @@ export const UserFormUpdate = () => {
                 required
             />
             <button type="submit">Atualizar</button>
+            <button type="submit">voltar</button>
         </form>
     );
 };
